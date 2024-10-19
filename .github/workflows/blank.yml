@@ -1,5 +1,0 @@
-name: first simple project
-on: workflow_dispatch
-job:
-  first job:
-    -
