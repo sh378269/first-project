@@ -13,5 +13,4 @@ jobs:
           cat /proc/version
           cat /ect/os-release
       - name: output of github context
-        run: echo "${{github}}"
-
+        run: echo "&{{github}}"
