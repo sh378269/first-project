@@ -11,6 +11,6 @@ jobs:
           echo "bye bye"
           ls -lrt
           cat /proc/version
-          cat /ect/os-release
+          cat /etc/os-release
       - name: output of github context
         run: echo "&{{github}}"
