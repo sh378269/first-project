@@ -13,4 +13,4 @@ jobs:
           cat /proc/version
           cat /etc/os-release
       - name: output of github context
-        run: echo "${{github}}"
+        run: echo "${{toJSON(github)}}"
