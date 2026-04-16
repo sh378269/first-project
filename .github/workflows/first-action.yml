@@ -16,3 +16,5 @@ jobs:
         run: echo "${{toJSON(github)}}"
       - name: output of Github env
         run: echo "${{github.actor}}"
+      - name: printing repo details
+        run : echo "${{github.event.repository.name}}"  
