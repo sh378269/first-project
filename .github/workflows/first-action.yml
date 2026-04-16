@@ -17,4 +17,4 @@ jobs:
       - name: output of Github env
         run: echo "${{github.actor}}"
       - name: printing repo details
-        run : echo "${{github.repository}}"  
+        run : echo "${{github.repository.name}}"  
