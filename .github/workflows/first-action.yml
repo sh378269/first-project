@@ -1,20 +1,15 @@
-name: first simple project
+name: Main yaml
 on: [push,workflow_dispatch]
 jobs:
-  first-jobs:
+  Prepare_Task:
     runs-on: ubuntu-latest
+    outputs:
+      branch_name: ${{steps.repo_branch.outputs.branch_name}}
+      version_name: ${{steps.version_name.outputs.version_name}}
     steps:
-      - name: print greeting
-        run: echo "good morning"
-      - name: print good bye
-        run: |
-          echo "bye bye"
-          ls -lrt
-          cat /proc/version
-          cat /etc/os-release
-      - name: output of github context
-        run: echo "${{toJSON(github)}}"
-      - name: output of Github env
-        run: echo "${{github.actor}}"
-      - name: printing repo details
-        run : echo "${{github.event.repository.name}}"  
+      - id: repo_branch
+        run: echo "${{github.ref.name}}" >>GITHUB_OUTPUT
+      - id: version_name
+        run: echo "version=1.2.5">>GITHUB_OUTPUT
+      # - name: print GITHUB output
+      #   run: echo "${{GITHUB_OUTPUT.repo_branch}}"
