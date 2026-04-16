@@ -15,4 +15,4 @@ jobs:
       - name: output of github context
         run: echo "${{toJSON(github)}}"
       - name: output of Github env
-        run: echo "${{github}}"
+        run: echo "${{github.actor}}"
