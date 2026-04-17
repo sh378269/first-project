@@ -1,0 +1,20 @@
+name: reusale workflow
+on: 
+    workflow_call:
+        inputs:
+            branch:
+                type: string
+                required: true
+            version:
+                type: number
+                required : true
+            repo_name:
+                type: string
+                required: true
+jobs:
+    my-action:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print all variable calling from first-action.yml
+              run: echo "$repo_name"
+    
