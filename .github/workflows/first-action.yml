@@ -13,7 +13,7 @@ jobs:
         run: echo "version=1.2.5">>GITHUB_OUTPUT
   call-reusable:
     needs: Prepare_Task
-    uses: sh378269/.github/workflows/reusable.yml@dev
+    uses: sh378269/.github/workflows/reusable.yml@Output-test
     with:
       branch: ${{needs.Prepare_Task.ouputs.branch_name}}
       version: ${{needs.Prepare_Task.output.version_name}}
